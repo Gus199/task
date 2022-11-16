@@ -22,7 +22,7 @@ function NewTask() {
       .then(() => {
         // We got a good response so navigate the user
         navigate('/tasks')
-        toast.success('New ticket created!')
+        toast.success('New task created!')
       })
       .catch(toast.error)
   }
@@ -31,7 +31,7 @@ function NewTask() {
     <>
       <BackButton />
       <section className='heading'>
-        <h1>Create New Ticket</h1>
+        <h1>Create New Task</h1>
         <p>Please fill out the form below</p>
       </section>
 

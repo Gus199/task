@@ -44,24 +44,24 @@ function Task() {
 
 
    // Close ticket
-   const onTicketInProgress = () => {
+   const onTaskInProgress= () => {
 
     // isSuccess state
     dispatch(inProgressTask(taskId))
       .unwrap()
       .then(() => {
-        toast.success('Ticket Closed')
+        toast.success('Task in Progress')
         navigate('/tasks')
       })
       .catch(toast.error)
   }
-// Close ticket
-  const onTicketDone = () => {
+// Close task
+  const onTaskDone = () => {
   
     dispatch(doneTask(taskId))
       .unwrap()
       .then(() => {
-        toast.success('Ticket Closed')
+        toast.success('Task Done')
         navigate('/tasks')
       })
       .catch(toast.error)
@@ -157,12 +157,12 @@ function Task() {
 
      
       {task.status !== 'in-progress' && (
-        <button onClick={onTicketInProgress} className='btn btn-block btn-danger' >
+        <button onClick={onTaskInProgress} className='btn btn-block btn-danger' >
          In Progress
         </button>
       )}
        {task.status !== 'done' && (
-        <button onClick={onTicketDone} className='btn btn-block btn-danger'>
+        <button onClick={onTaskDone } className='btn btn-block btn-danger'>
          Done
         </button>
       )}
